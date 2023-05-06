@@ -1,15 +1,19 @@
 import SearchIcon from "@mui/icons-material/Search";
 import CineVerseLogoBlack from "../assets/CineverseBlack.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Box } from "@mui/material";
 
 const Navbar = () => {
   const [isFocused, setIsFocused] = useState(false);
   return (
     <div className="navbar flex">
       <div className="left-nav">
-        <div className="logo">
-          <img src={CineVerseLogoBlack} alt="cineverse-logo" />
-        </div>
+        <Box className="logo">
+          <Link to="/">
+            <img src={CineVerseLogoBlack} alt="cineverse-logo" />
+          </Link>
+        </Box>
       </div>
       <div className="right-nav">
         <div className="searchBar">
