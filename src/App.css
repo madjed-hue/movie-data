@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+.main:before {
+  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  position: absolute;
+  content: "";
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.main:after {
+  content: "";
+  background-image: url("./grid.svg");
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  filter: invert(1);
+}
+.gradient {
+  height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.15;
+}
+.app {
+  position: relative;
+  z-index: 10;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Navbar */
+.navbar {
+  justify-content: space-between;
+  padding: 0 25px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.navbar .left-nav .logo {
+  max-width: 70px;
+}
+.navbar .left-nav .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar .right-nav .searchBar {
+  position: relative;
+}
+.navbar .right-nav .searchBar input {
+  width: 200px;
+  height: 40px;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+.navbar .right-nav .searchBar input.active {
+  width: 300px;
+}
+.navbar .right-nav .searchBar svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-50%, 50%);
+  cursor: pointer;
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  object-fit: contain;
+  color: #fff;
+  height: 448px;
+}
+.banner__content {
+  margin-left: 30px;
+  padding-top: 140px;
+  height: 190px;
+}
+.banner__title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+.banner__desc {
+  width: 45rem;
+  line-height: 1.3;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  max-width: 360px;
+  height: 80px;
+}
+.banner--fadeButton {
+  height: 7.4rem;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgba(37, 37, 37, 0.61),
+    #111
+  );
+  bottom: -140px;
+  position: relative;
+}
+.bunner__buttons {
+  display: flex;
+}
+.banner__btn {
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  padding: 0.5rem 2rem;
+  margin-right: 1rem;
+  background-color: rgba(51, 51, 51, 0.5);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.banner__btn:hover {
+  color: #000;
+  background-color: #e6e6e6;
+}
+
+/* MovieCards */
+
+.movieCards {
+  width: 80%;
+  margin: 5vmax auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movieCard {
+  margin: 0 25px 20px;
+  cursor: pointer;
+}
+.movieCard:hover img {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.07);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.movieDetails {
+  width: 90%;
+  margin: 50px auto;
+}
+.movieDetails .container {
+  display: flex;
+  align-items: center;
+}
+
+.movieDetails .container .left {
+  width: 30%;
+  margin-right: 10%;
+}
+.movieDetails .container .left img {
+  width: 100%;
+  object-fit: contain;
+}
+.movieDetails .container .right p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 998px) {
+  .movieDetails .container {
+    flex-direction: column;
+  }
+  .movieDetails .container .left {
+    width: 300px;
+    margin-right: 0;
+  }
+}
