@@ -6,6 +6,7 @@ import { Box } from "@mui/material";
 
 const Navbar = () => {
   const [isFocused, setIsFocused] = useState(false);
+
   return (
     <div className="navbar flex">
       <div className="left-nav">
@@ -24,7 +25,7 @@ const Navbar = () => {
             onClick={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
-          <SearchIcon />
+          <SearchIcon className="searchIcon" />
         </div>
       </div>
     </div>

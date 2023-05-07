@@ -91,6 +91,8 @@ a {
 
 .navbar .right-nav .searchBar {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .navbar .right-nav .searchBar input {
   width: 200px;
@@ -105,11 +107,15 @@ a {
 .navbar .right-nav .searchBar input.active {
   width: 300px;
 }
-.navbar .right-nav .searchBar svg {
+.navbar .right-nav .searchBar .searchIcon {
   position: absolute;
   right: 0;
   top: 0;
   transform: translate(-50%, 50%);
+  cursor: pointer;
+}
+.navbar .right-nav .searchBar .themeIcon {
+  margin-right: 10px;
   cursor: pointer;
 }
 
